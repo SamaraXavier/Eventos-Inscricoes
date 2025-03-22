@@ -14,4 +14,14 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
+    <dependencies>
+        <!-- Lombok para gerar getters, setters e outros métodos automaticamente -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.30</version>  <!-- Verifique a versão mais recente -->
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
 </project>
