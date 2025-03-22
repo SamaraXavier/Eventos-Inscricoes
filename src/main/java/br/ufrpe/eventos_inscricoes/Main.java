@@ -1,4 +1,4 @@
-package org.example;
+package br.ufrpe.eventos_inscricoes;
 
 public class Main {
     public static void main(String[] args) {
