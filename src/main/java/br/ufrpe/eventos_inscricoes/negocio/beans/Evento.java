@@ -1,9 +1,14 @@
 package br.ufrpe.eventos_inscricoes.negocio.beans;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
+@Getter
+@Setter
 public class Evento extends Entidade {
     private long id;
     private String descricao;
@@ -29,70 +34,6 @@ public class Evento extends Entidade {
     @Override
     public long getId() {
         return this.id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public String getDescricao() {
-        return descricao;
-    }
-
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
-    }
-
-    public String getTitulo() {
-        return titulo;
-    }
-
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
-    }
-
-    public LocalDateTime getDataEvento() {
-        return dataEvento;
-    }
-
-    public void setDataEvento(LocalDateTime dataEvento) {
-        this.dataEvento = dataEvento;
-    }
-
-    public String getLocal() {
-        return local;
-    }
-
-    public void setLocal(String local) {
-        this.local = local;
-    }
-
-    public int getCapacidadeMaxima() {
-        return capacidadeMaxima;
-    }
-
-    public void setCapacidadeMaxima(int capacidadeMaxima) {
-        this.capacidadeMaxima = capacidadeMaxima;
-    }
-
-    public double getPreco() {
-        return preco;
-    }
-
-    public void setPreco(double preco) {
-        this.preco = preco;
-    }
-
-    public Usuario getCadastradoPor() {
-        return cadastradoPor;
-    }
-
-    public void setCadastradoPor(Usuario cadastradoPor) {
-        this.cadastradoPor = cadastradoPor;
-    }
-
-    public ArrayList<Inscricao> getInscricoes() {
-        return inscricoes;
     }
 
     public void adicionarInscricao(Inscricao novaInscricao) {
