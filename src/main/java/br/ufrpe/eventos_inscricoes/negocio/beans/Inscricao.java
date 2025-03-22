@@ -29,15 +29,17 @@ public class Inscricao extends Entidade {
         return this.id;
     }
 
+    @Override
     public boolean equals(Object o) {
         boolean retorno = false;
         if (o instanceof Inscricao) {
             Inscricao inscricao = (Inscricao) o;
-            retorno = this.id == inscricao.getId();
+            retorno = this.id == inscricao.getId() || this.usuario.equals(inscricao.getUsuario()) && this.evento.equals(inscricao.getEvento());
         }
         return retorno;
     }
 
+    @Override
     public String toString() {
         String retorno = "";
         retorno += "ID: " + this.id + "\n";

@@ -13,12 +13,31 @@ public class Feedback extends Entidade {
     private String mensagem;
     private int avaliacao;
     private LocalDateTime dataEnvia;
+    private Evento evento;
+    private Usuario avaliador;
 
-    public Feedback(long id, String mensagem, int avaliacao, LocalDateTime dataEnvia) {
+    public Feedback(long id, String mensagem, int avaliacao, LocalDateTime dataEnvia, Evento evento, Usuario avaliador) {
         this.id = id;
         this.mensagem = mensagem;
         this.avaliacao = avaliacao;
         this.dataEnvia = dataEnvia;
+        this.evento = evento;
+        this.avaliador = avaliador;
+    }
+
+    @Override
+    public long getId() {
+        return this.id;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        boolean retorno = false;
+        if (o instanceof Feedback) {
+            Feedback feedback = (Feedback) o;
+            retorno = this.id == feedback.id || this.avaliador.equals(feedback.getAvaliador()) && this.mensagem.equals(feedback.mensagem) && this.evento.equals(feedback.getEvento());
+        }
+        return retorno;
     }
 
     @Override
@@ -28,11 +47,8 @@ public class Feedback extends Entidade {
                 ", mensagem='" + mensagem + '\'' +
                 ", avaliacao=" + avaliacao +
                 ", dataEnvia=" + dataEnvia.format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm")) +
+                ", evento=" + evento +
+                ", avaliador=" + avaliador +
                 '}';
-    }
-
-    @Override
-    public long getId() {
-        return this.id;
     }
 }
