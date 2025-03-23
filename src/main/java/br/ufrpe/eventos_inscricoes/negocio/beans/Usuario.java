@@ -1,5 +1,6 @@
 package br.ufrpe.eventos_inscricoes.negocio.beans;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
 import lombok.Getter;
@@ -7,7 +8,8 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class Usuario extends Entidade {
+public class Usuario extends Entidade implements Serializable {
+    private static final long serialVersionUID = 1L; // Versão do objeto para evitar problemas de compatibilidade
     private long id;
     private String nome;
     private String email;
@@ -19,7 +21,7 @@ public class Usuario extends Entidade {
         setId(id);
         setNome(nome);
         setEmail(email);
-        setNome(senha);
+        setSenha(senha);
         setTipoUsuario(tipoUsuario);
         setDataNascimento(dataNascimento);
     }

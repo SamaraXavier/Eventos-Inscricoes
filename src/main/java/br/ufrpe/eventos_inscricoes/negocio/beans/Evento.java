@@ -3,13 +3,15 @@ package br.ufrpe.eventos_inscricoes.negocio.beans;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 @Getter
 @Setter
-public class Evento extends Entidade {
+public class Evento extends Entidade implements Serializable {
+    private static final long serialVersionUID = 1L; // Versão do objeto para evitar problemas de compatibilidade
     private long id;
     private String descricao;
     private String titulo;

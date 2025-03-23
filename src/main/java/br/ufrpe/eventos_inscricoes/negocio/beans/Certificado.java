@@ -1,5 +1,6 @@
 package br.ufrpe.eventos_inscricoes.negocio.beans;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
@@ -8,7 +9,8 @@ import lombok.Getter;
 
 @Setter
 @Getter
-public class Certificado extends Entidade {
+public class Certificado extends Entidade implements Serializable {
+    private static final long serialVersionUID = 1L; // Versão do objeto para evitar problemas de compatibilidade
     private long id;
     private Usuario usuario;
     private LocalDateTime dataEmissao;
